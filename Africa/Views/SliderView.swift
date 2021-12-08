@@ -9,14 +9,14 @@ import SwiftUI
 
 struct SliderView: View {
     
-    let sliderImages: [SliderModel] = Bundle.main.decode("covers.json")
+    let sliderImages: [SliderModel] = Bundle.main.decodeSliderData("covers.json")
     
     var body: some View {
         TabView {
             ForEach(sliderImages) { item in
                 Image(item.name)
                     .resizable()
-                    .scaledToFit()
+                    .scaledToFill()
             }
         }//:TabView
         .tabViewStyle(PageTabViewStyle())
